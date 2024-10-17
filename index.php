@@ -31,7 +31,7 @@
                         <a class="nav-link text-light" aria-current="page" href="contact.php">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" aria-disabled="true">About us</a>
+                        <a class="nav-link text-light" aria-disabled="true">Over ons</a>
                     </li>
                 </ul>
             </div>
