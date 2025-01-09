@@ -1,13 +1,3 @@
-<?php
-    include 'DB/db.php';
-    global $db;
-
-    $query = $db->prepare("SELECT * FROM vacatures where id = :id");
-    $query->bindParam(":id", $_GET['id']);
-    $query->execute();
-    $result = $query->fetchAll(PDO::FETCH_ASSOC);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +17,8 @@
             <a href="index.php" class="navbar-brand d-flex text-light align-items-center">
                 <strong>Werkinfo.nl</strong>
             </a>
-            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo02"
                     aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -47,27 +38,23 @@
 
 <main>
     <div class="row d-flex justify-content-center mt-2">
-        <?php
-            foreach ($result as $job) {
-                echo "
-                    <div class='col-lg-10 col-md-10 col-sm10 text-center m-3 p-3'>
-                        <div class='container-fluid'>
-                            <h4 class='header text-center'>$job[name]</h4>
-                            <div class='banner-img'>
-                                <img src=$job[img] alt='cover image' class='img-fluid rounded'>
-                            </div>
-                            <div class='pay-and-hours'>
-                                <p class='text-center'>€$job[pay_monthly]/maand (bruto)</p>
-                                <p class='text-center'>$job[hours_weekly] uur/week</p>
-                            </div>
-                            <div class='footer text-center'>
-                                <p> $job[description] </p>
-                           </div>
-                        </div>
-                    </div>
-                    ";
-            }
-        ?>
+        <div class="title">
+            <h2 class="text-center">
+                Contact
+            </h2>
+        </div>
     </div>
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center m-5">
+            <p class="w-50 text-center">
+                Werkinfo.nl is een initiatief van ROC Mondriaan om werkgevers aan MBO-opgeleiden te helpen en
+                MBO-studenten
+                aan een baan te helpen.
+            </p>
+        </div>
+        <div class="row d-flex justify-content-center m-5">
+            <img class="w-50 h-50 img-fluid" src="img/mondriaan.png">
+        </div>
+    </div>
+
 </main>
-</body>
